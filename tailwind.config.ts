@@ -19,6 +19,23 @@ const config = {
     },
     extend: {
       colors: {
+        admin: {
+          1: "#4B49AC",
+          2: "#988DFF",
+          3: "#7DA0FA",
+          4: "#7978E9",
+          5: "#F3797E",
+        },
+        grad : {
+          1: "linear-gradient(to right top, #4b49ac, #5e59c0, #716ad5, #857bea, #988dff)",
+          2: "linear-gradient(to right top, #7da0fa, #7a96f7, #798df3, #7882ee, #7978e9)",
+          3: "linear-gradient(to right top, #f3797e, #ee6c98, #dc68b6, #b76ed2, #7978e9)"
+        },
+        fg: {
+          1: "#F4ECFF",
+          2: "#F4F5F7",
+          3: "#EADFFB"
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
