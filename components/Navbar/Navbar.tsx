@@ -4,7 +4,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
 import { Button } from '../ui/button'
-import DrawerComponent from '@/utils/navbar/drawerComponent'
+import DrawerComponent from "../../utils/navbar/DrawerComponent";
+import { Badge } from '@mui/material'
+import { Lock } from '@mui/icons-material'
 
 const Navbar = () => {
 
@@ -41,33 +43,39 @@ const Navbar = () => {
         </section>
 
         <ul className='w-1/2 justify-center space-x-6 items-center hidden sm:flex'>
+            
+
             <li className='text-admin-1 dark:text-admin-2 hover:bg-gradient-to-tr hover:from-admin-2 via-admin-3 to-admin-4 px-3 py-1 rounded-full hover:translate-x-1 hover:scale-110 transition-all duration-300 ease-in-out'>
-                <Link href="/jobs" style={{
+                <Link href="/resume-sum" style={{
                     fontFamily: "Oswald, sans-serif",
                     fontWeight: 400,
                     fontSize: "16px"
                 }}>
-                    Jobs
+                    Resume
                 </Link>
             </li>
 
             <li className='text-admin-1 dark:text-admin-2 hover:bg-gradient-to-tr hover:from-admin-2 via-admin-3 to-admin-4 px-3 py-1 rounded-full hover:translate-x-1 hover:scale-110 transition-all duration-300 ease-in-out'>
-                <Link href="/jobs" style={{
-                    fontFamily: "Oswald, sans-serif",
-                    fontWeight: 400,
-                    fontSize: "16px"
-                }}>
-                    Resume'
-                </Link>
-            </li>
-
-            <li className='text-admin-1 dark:text-admin-2 hover:bg-gradient-to-tr hover:from-admin-2 via-admin-3 to-admin-4 px-3 py-1 rounded-full hover:translate-x-1 hover:scale-110 transition-all duration-300 ease-in-out'>
-                <Link href="/jobs" style={{
+                <Link href="/cv-sum" style={{
                     fontFamily: "Oswald, sans-serif",
                     fontWeight: 400,
                     fontSize: "16px"
                 }}>
                     CV
+                </Link>
+            </li>
+
+            <li className='text-admin-1 dark:text-admin-2 hover:bg-gradient-to-tr hover:from-admin-2 via-admin-3 to-admin-4 px-3 py-1 rounded-full hover:translate-x-1 hover:scale-110 transition-all duration-300 ease-in-out'>
+                <Link href="/planning" style={{
+                    fontFamily: "Oswald, sans-serif",
+                    fontWeight: 400,
+                    fontSize: "16px"
+                }}>
+                    <Badge badgeContent={
+                        <Lock className='text-[10px]' />
+                    } color='secondary'>
+                        Planning
+                    </Badge>
                 </Link>
             </li>
         </ul>
@@ -76,12 +84,12 @@ const Navbar = () => {
             <React.Fragment> 
                 <section className='justify-center gap-[1rem] items-center hidden sm:flex'>
                     <h1 className='hover:-translate-x-1 hover:scale-105 transition-all duration-300 ease-in-out'>
-                        <Link href="/auth/sign-in" className='border border-admin-1 text-admin-1 px-3 py-2 rounded-lg hover:bg-admin-1 hover:text-fg-1 transition-all duration-300 ease-in-out'
+                        <Link href="/auth/sign-up" className='border border-admin-1 text-admin-1 px-3 py-2 rounded-lg hover:bg-admin-1 hover:text-fg-1 transition-all duration-300 ease-in-out'
                         style={{
                             fontFamily: "Lato, sans-serif",
                             fontWeight: 700
                         }}>
-                            Sign-in
+                            Sign-up
                         </Link>
                     </h1>
 
@@ -89,7 +97,9 @@ const Navbar = () => {
                         fontFamily: "Lato, sans-serif",
                         fontWeight: 700
                     }}>
-                        Login
+                        <Link href="/auth/sign-in">
+                            Login
+                        </Link>
                     </Button>
                 </section>
             </React.Fragment>

@@ -8,52 +8,128 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
+import { AppRegistrationRounded, Book, ExploreRounded, Login, Logout, Menu, NextPlan, Person2 } from '@mui/icons-material'
+import { Typography } from '@mui/material';
 
 export default function DrawerComponent() {
   const [open, setOpen] = React.useState(false);
+  const [loggedIn, setLogin] = React.useState(true);
 
   const toggleDrawer = (newOpen: boolean) => () => {
     setOpen(newOpen);
   };
 
+  const handleLogin = () => {
+    try {
+      setLogin(true);
+    } catch (error : unknown) {
+        if(error instanceof Error){
+          console.log(error.message);
+        }
+        else {
+          console.log("Error Unknown");
+        }
+    }
+  }
+
   const DrawerList = (
-    <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer(false)}>
+    <Box sx={{ width: 250, height: "full", background: "#F4F5F7"}} role="presentation" onClick={toggleDrawer(false)} >
       <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
+    {[
+        {
+          id: 1,
+          content: 'Resume',
+          Icon: <Book className='text-admin-1'/>,
+        },
+        {
+          id: 2,
+          content: 'CV',
+          Icon: <ExploreRounded className='text-admin-1'/>,
+        },
+        {
+          id: 3,
+          content: 'Planning',
+          Icon: <Person2 className='text-admin-1'/>,
+        }
+    ].map((text) => (
+        <ListItem key={text.id} disablePadding>
+            <ListItemButton className="transition-all duration-150 ease-in-out">
+                <ListItemIcon className="text-admin-2">
+                    {text.Icon}
+                </ListItemIcon>
+                <Typography
+                    className="text-admin-1"
+                    sx={{
+                        fontFamily: "Oswald, sans-serif",
+                        fontWeight: 600,
+                    }}
+                >
+                    {text.content}
+                </Typography>
             </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
+        </ListItem>
+    ))}
+</List>
+
       <Divider />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
+      {(loggedIn === false) ? (
+        <React.Fragment>
+          <List>
+            {['Sign in', 'Login'].map((text, index) => (
+              <ListItem key={text} disablePadding>
+                <ListItemButton>
+                  <ListItemIcon>
+                    {index % 2 === 0 ? <Login className='text-admin-1' /> : <AppRegistrationRounded  className='text-admin-1'/>}
+                  </ListItemIcon>
+                   <Typography
+                    className="text-admin-1"
+                    sx={{
+                        fontFamily: "Oswald, sans-serif",
+                        fontWeight: 600,
+                    }}
+                >
+                    {text}
+                </Typography>
+                </ListItemButton>
+              </ListItem>
+            ))}
+          </List>
+        </React.Fragment>
+      ) : (
+        <React.Fragment>
+          <List>
+            {['Go to Console', 'Logout'].map((text, index) => (
+              <ListItem key={text} disablePadding>
+                <ListItemButton>
+                  <ListItemIcon>
+                    {index % 2 === 0 ? <NextPlan className='text-admin-1' /> : <Logout className='text-admin-1'/>}
+                  </ListItemIcon>
+                   <Typography
+                    className="text-admin-1"
+                    sx={{
+                        fontFamily: "Oswald, sans-serif",
+                        fontWeight: 600,
+                    }}
+                >
+                    {text}
+                </Typography>
+                </ListItemButton>
+              </ListItem>
+            ))}
+          </List>
+        </React.Fragment>
+      )}
     </Box>
   );
 
   return (
     <div>
       <Button onClick={toggleDrawer(true)}>
-        menu
+        <Menu />
       </Button>
-      <Drawer open={open} anchor='right' onClose={toggleDrawer(false)}>
+      <Drawer open={open} anchor='right' onClose={toggleDrawer(false)} sx={{
+          
+      }} >
         {DrawerList}
       </Drawer>
     </div>
