@@ -1,12 +1,12 @@
 import React from 'react'
-import Home from './home/Home'
+import Home from './home/page'
 
-const page = () => {
+const Index = () => {
   return (
-    <div className='min-h-[90vh]'>
+    <div>
         <Home />
     </div>
   )
 }
 
-export default page
+export default Index

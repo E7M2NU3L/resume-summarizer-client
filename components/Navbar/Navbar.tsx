@@ -29,7 +29,7 @@ const Navbar = () => {
 
         <Link href="/" className='flex justify-center items-center space-x-4'>
             <Image
-                src="/images/navLogo.jpg"
+                src="/svg/HR.svg"
                 alt='app-logo'
                 width={12}
                 height={12}
