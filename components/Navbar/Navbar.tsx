@@ -27,7 +27,7 @@ const Navbar = () => {
   return (
     <div className='flex justify-between px-[1rem] items-center min-h-[10vh]'>
 
-        <section className='flex justify-center items-center space-x-4'>
+        <Link href="/" className='flex justify-center items-center space-x-4'>
             <Image
                 src="/images/navLogo.jpg"
                 alt='app-logo'
@@ -40,7 +40,7 @@ const Navbar = () => {
             }}>
                 Jehr-autoHR
             </h1>
-        </section>
+        </Link>
 
         <ul className='w-1/2 justify-center space-x-6 items-center hidden sm:flex'>
             
@@ -84,7 +84,7 @@ const Navbar = () => {
             <React.Fragment> 
                 <section className='justify-center gap-[1rem] items-center hidden sm:flex'>
                     <h1 className='hover:-translate-x-1 hover:scale-105 transition-all duration-300 ease-in-out'>
-                        <Link href="/auth/sign-up" className='border border-admin-1 text-admin-1 px-3 py-2 rounded-lg hover:bg-admin-1 hover:text-fg-1 transition-all duration-300 ease-in-out'
+                        <Link href="/sign-up" className='border border-admin-1 text-admin-1 px-3 py-2 rounded-lg hover:bg-admin-1 hover:text-fg-1 transition-all duration-300 ease-in-out'
                         style={{
                             fontFamily: "Lato, sans-serif",
                             fontWeight: 700
@@ -97,7 +97,7 @@ const Navbar = () => {
                         fontFamily: "Lato, sans-serif",
                         fontWeight: 700
                     }}>
-                        <Link href="/auth/sign-in">
+                        <Link href="/sign-in">
                             Login
                         </Link>
                     </Button>

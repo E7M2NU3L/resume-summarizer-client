@@ -10,6 +10,7 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import { AppRegistrationRounded, Book, ExploreRounded, Login, Logout, Menu, NextPlan, Person2 } from '@mui/icons-material'
 import { Typography } from '@mui/material';
+import Link from 'next/link';
 
 export default function DrawerComponent() {
   const [open, setOpen] = React.useState(false);
@@ -98,23 +99,35 @@ export default function DrawerComponent() {
       ) : (
         <React.Fragment>
           <List>
-            {['Go to Console', 'Logout'].map((text, index) => (
-              <ListItem key={text} disablePadding>
-                <ListItemButton>
-                  <ListItemIcon>
-                    {index % 2 === 0 ? <NextPlan className='text-admin-1' /> : <Logout className='text-admin-1'/>}
-                  </ListItemIcon>
-                   <Typography
-                    className="text-admin-1"
-                    sx={{
-                        fontFamily: "Oswald, sans-serif",
-                        fontWeight: 600,
-                    }}
-                >
-                    {text}
-                </Typography>
-                </ListItemButton>
-              </ListItem>
+            {[{
+              id:1,
+              content: 'Go to Console',
+              Icon: <NextPlan className='text-admin-1' />,
+              link: '/dashboard'
+            }, {
+              id:2,
+              content: 'Logout',
+              Icon: <Logout className='text-admin-1'/>,
+              link: '/logout'
+            }].map((text, index) => (
+              <Link key={text.id} href={text.link}>
+                <ListItem disablePadding>
+                  <ListItemButton>
+                    <ListItemIcon>
+                      {text.Icon}
+                    </ListItemIcon>
+                    <Typography
+                      className="text-admin-1"
+                      sx={{
+                          fontFamily: "Oswald, sans-serif",
+                          fontWeight: 600,
+                      }}
+                  >
+                      {text.content}
+                  </Typography>
+                  </ListItemButton>
+                </ListItem>
+              </Link>
             ))}
           </List>
         </React.Fragment>
