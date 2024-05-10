@@ -1,10 +1,11 @@
 import React from 'react'
-import './main.css';
 
 const Cv = () => {
   return (
-    <div>Cv</div>
+    <div>
+        CV
+    </div>
   )
 }
 
-export default Cv
+export default Cv;
