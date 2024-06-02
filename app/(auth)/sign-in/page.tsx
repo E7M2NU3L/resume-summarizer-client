@@ -104,7 +104,7 @@ const SignIn = () => {
 
         <Link href="/sign-up" className='flex sm:hidden pt-[12px]'>
           <h5 className='text-gray-800 text-[12px] font-light'>
-            Don't have an Account? <span className='hover:text-green-200 hover:translate-x-1 transition-all duration-300 ease-in-out'>Sign-up</span> 
+            Dont have an Account? <span className='hover:text-green-200 hover:translate-x-1 transition-all duration-300 ease-in-out'>Sign-up</span> 
           </h5>
         </Link>
 

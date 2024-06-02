@@ -7,14 +7,13 @@ import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 import { AppRegistrationRounded, Book, ExploreRounded, Login, Logout, Menu, NextPlan, Person2 } from '@mui/icons-material'
 import { Typography } from '@mui/material';
 import Link from 'next/link';
 
 export default function DrawerComponent() {
   const [open, setOpen] = React.useState(false);
-  const [loggedIn, setLogin] = React.useState(true);
+  const [loggedIn, setLogin] = React.useState(false);
 
   const toggleDrawer = (newOpen: boolean) => () => {
     setOpen(newOpen);
@@ -140,8 +139,7 @@ export default function DrawerComponent() {
       <Button onClick={toggleDrawer(true)}>
         <Menu />
       </Button>
-      <Drawer open={open} anchor='right' onClose={toggleDrawer(false)} sx={{
-          
+      <Drawer open={open} anchor='right' onClose={toggleDrawer(false)} sx={{     
       }} >
         {DrawerList}
       </Drawer>

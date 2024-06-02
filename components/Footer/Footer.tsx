@@ -24,12 +24,12 @@ const Footer = () => {
     text: 'Planning',
     desc: 'for human resource planning and staffing tools'
   },{
-    id: 1,
+    id: 2,
     link: '/resume-sum',
     text: 'Resume Summarize',
     desc: 'summarize resume and visualize results to select the right persons'
   },{
-    id: 1,
+    id: 3,
     link: '/cv-sum',
     text: 'Cv Summarize',
     desc: 'summarize Cv to Choose the right Professional'
@@ -37,25 +37,25 @@ const Footer = () => {
 
   const ProdServs = [
     {
-      id:1,
+      id:4,
       text: 'Resume Builder',
       link: '/resume-builder-app',
       desc: 'interview and job seekers'
     },
     {
-      id: 2,
+      id: 5,
       text: 'roamap Publishing App',
       link: '/roadmap-publisher',
       desc: 'presentations'
     },
     {
-      id: 3,
+      id: 6,
       text: 'work-pro',
       link: '/workplace-productivity',
       desc: 'collaborated workplace'
     },
     {
-      id: 4,
+      id: 7,
       text: 'See-more',
       link: '/jehr-solutions',
       desc: 'Visit Website'

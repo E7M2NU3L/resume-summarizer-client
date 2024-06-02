@@ -3,7 +3,7 @@ import React from 'react'
 
 const Dashboard = () => {
   return (
-    <div className='bg-purple-400 min-h-[90vh] w-1/2'>
+    <div className='bg-purple-400 min-h-[90vh] w-full'>
         <p>
         Dashboard
         </p>

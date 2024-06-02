@@ -38,7 +38,7 @@ const Navbar = () => {
             <h1 className='text-lg font-bold text-admin-1 hover:translate-x-2 hover:scale-110 opacity-100 hidden sm:block dark:text-admin-2 transition-all duration-300 ease-in-out' style={{
                 fontFamily: "Oswald, sans-serif"
             }}>
-                Jehr-autoHR
+                autoHR
             </h1>
         </Link>
 
